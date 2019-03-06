@@ -1,0 +1,27 @@
+<html>
+<head>
+</head>
+<body bgcolor="#c9ff57">
+<table align="center" border="2">
+    <tr><center><th bgcolor="#daa520">Student Complete Details</th></center></tr>
+<tr><td>ID</td><td>Firstname</td>
+<td>Lastname</td>
+<td>Email</td>
+<td>Phoneno</td>
+<td>Address</td></tr>
+{% if object_list %}
+    {% for x in object_list %}
+        <tr><td><a href="{% url 'viewonestudent' x.id %}" >{{ x.id }}</a></td>
+        <td>{{ x.firstname }}</td>
+        <td>{{ x.lastname }}</td>
+        <td>{{ x.email }}</td>
+            <td>{{ x.phoneno }}</td>
+            <td>{{ x.address }}</td>
+        </tr>
+    {% endfor %}
+{% else %}
+    <p>No Students are available</p>
+{% endif %}
+</table>
+</body>
+</html>

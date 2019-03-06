@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table align="center" border="2">
+    <tr><th>Student Complete Details</th></tr>
+<tr><td>Firstname</td>
+<td>Lastname</td>
+<td>Email</td>
+<td>Phoneno</td>
+<td>Address</td>
+<td>FirstDoc</td>
+<td>SecondDoc</td></tr>
+        <tr><td>{{ object.firstname }}</td>
+                <td>{{ object.lastname }}</td>
+                <td>{{ object.email }}</td>
+                <td>{{ object.phoneno }}</td>
+                <td>{{ object.address }}</td>
+            {% for y in object.documents_set.all %}
+                <td><img src="/{{ y.firstdoc.url }} "width="100" height="100"></td>
+                <td><img src="/{{ y.seconddoc.url }}"width="100" height="100"></td>
+            {% endfor %}
+        </tr>
+</table>
+</body>
+</html>
